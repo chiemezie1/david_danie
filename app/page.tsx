@@ -76,6 +76,17 @@ export default function Home() {
             </svg>
           </button>
           <button
+            onClick={() => scrollToSection('video')}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${
+              activeSection === 'video' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
+            }`}
+            title="Video"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293H15M6 20l4-16m4 16l4-16" />
+            </svg>
+          </button>
+          <button
             onClick={() => scrollToSection('skills')}
             className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${
               activeSection === 'skills' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
@@ -252,6 +263,120 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section id="video" className="min-h-screen flex items-center ml-20 py-20 z-10 relative">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-black text-white mb-4">
+              My <span className="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">Story</span>
+            </h2>
+            <p className="text-xl text-gray-300">Get to know me through my elevator pitch</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Side - Video Player */}
+            <div className="relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/50 cyber-glow">
+                <div className="aspect-video bg-gradient-to-br from-gray-700 to-gray-900 rounded-2xl border border-gray-600/50 flex items-center justify-center relative overflow-hidden">
+                  {/* Video Placeholder - Replace with actual video */}
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-gradient-to-br from-red-600 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4 cyber-glow">
+                      <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2">Elevator Pitch Video</h3>
+                    <p className="text-gray-400 mb-4">Coming Soon!</p>
+                    <div className="text-sm text-gray-500">
+                      Upload your video file to the public folder and update the src below
+                    </div>
+                  </div>
+
+                  {/* Uncomment and update when video is ready */}
+                  {/*
+                  <video
+                    controls
+                    className="w-full h-full rounded-xl"
+                    poster="/david_danie.jpg"
+                  >
+                    <source src="/david_elevator_pitch.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  */}
+                </div>
+              </div>
+
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-red-600/30 rounded-full flex items-center justify-center border border-red-500/50 cyber-glow">
+                <span className="text-xl">🎬</span>
+              </div>
+              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-pink-600/30 rounded-full flex items-center justify-center border border-pink-500/50 cyber-glow">
+                <span className="text-lg">🎤</span>
+              </div>
+            </div>
+
+            {/* Right Side - Video Description */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-3xl font-bold text-white mb-4">My Elevator Pitch</h3>
+                <p className="text-xl text-gray-300 leading-relaxed mb-6">
+                  Watch my personal introduction where I share my journey, passion for cybersecurity,
+                  and vision for making a meaningful impact in the tech industry.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-red-500/50 transition-all duration-300 skill-card">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center">
+                      <span className="text-2xl">🎯</span>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-red-400 mb-2">My Mission</h4>
+                      <p className="text-gray-300">To leverage my strong foundation in science and passion for technology to create innovative cybersecurity solutions.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-pink-500/50 transition-all duration-300 skill-card">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-pink-600/20 rounded-lg flex items-center justify-center">
+                      <span className="text-2xl">🚀</span>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-pink-400 mb-2">My Vision</h4>
+                      <p className="text-gray-300">Working with innovative companies like Microsoft to develop cutting-edge software solutions that make a difference.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 skill-card">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center">
+                      <span className="text-2xl">💪</span>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-purple-400 mb-2">My Commitment</h4>
+                      <p className="text-gray-300">Dedicated to continuous learning, fast-paced execution, and delivering excellence in every project I undertake.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Call to Action */}
+              <div className="pt-4">
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="px-8 py-4 bg-gradient-to-r from-red-600 to-pink-600 text-white font-semibold rounded-full hover:from-red-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 cyber-glow"
+                >
+                  Let's Connect
+                </button>
               </div>
             </div>
           </div>
