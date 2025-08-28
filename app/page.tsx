@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
-  const [particles, setParticles] = useState<Array<{left: number, top: number, size: number, delay: number, duration: number}>>([]);
+  const [particles, setParticles] = useState<Array<{ left: number, top: number, size: number, delay: number, duration: number }>>([]);
 
   useEffect(() => {
     // Generate particles only on client side to avoid hydration mismatch
@@ -55,9 +55,8 @@ export default function Home() {
         <div className="flex flex-col space-y-6">
           <button
             onClick={() => scrollToSection('home')}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${
-              activeSection === 'home' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
-            }`}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${activeSection === 'home' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
+              }`}
             title="Home"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,9 +65,8 @@ export default function Home() {
           </button>
           <button
             onClick={() => scrollToSection('about')}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${
-              activeSection === 'about' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
-            }`}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${activeSection === 'about' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
+              }`}
             title="About"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -77,9 +75,8 @@ export default function Home() {
           </button>
           <button
             onClick={() => scrollToSection('video')}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${
-              activeSection === 'video' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
-            }`}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${activeSection === 'video' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
+              }`}
             title="Video"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,9 +85,8 @@ export default function Home() {
           </button>
           <button
             onClick={() => scrollToSection('skills')}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${
-              activeSection === 'skills' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
-            }`}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${activeSection === 'skills' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
+              }`}
             title="Skills"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,9 +95,8 @@ export default function Home() {
           </button>
           <button
             onClick={() => scrollToSection('projects')}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${
-              activeSection === 'projects' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
-            }`}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${activeSection === 'projects' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
+              }`}
             title="Projects"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,9 +105,8 @@ export default function Home() {
           </button>
           <button
             onClick={() => scrollToSection('contact')}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${
-              activeSection === 'contact' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
-            }`}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cyber-glow ${activeSection === 'contact' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-purple-600 hover:text-white'
+              }`}
             title="Contact"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -285,7 +279,7 @@ export default function Home() {
               <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/50 cyber-glow">
                 <div className="aspect-video bg-gradient-to-br from-gray-700 to-gray-900 rounded-2xl border border-gray-600/50 flex items-center justify-center relative overflow-hidden">
                   {/* Video Placeholder - Replace with actual video */}
-                  <div className="text-center">
+                  {/* <div className="text-center">
                     <div className="w-20 h-20 bg-gradient-to-br from-red-600 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4 cyber-glow">
                       <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
@@ -296,19 +290,20 @@ export default function Home() {
                     <div className="text-sm text-gray-500">
                       Upload your video file to the public folder and update the src below
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Uncomment and update when video is ready */}
-                  {/*
-                  <video
-                    controls
-                    className="w-full h-full rounded-xl"
-                    poster="/david_danie.jpg"
-                  >
-                    <source src="/david_elevator_pitch.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  */}
+
+                  <iframe
+                    className="w-full h-96 rounded-xl"
+                    src="https://www.youtube.com/embed/npQtzPxt_x0"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+
+
                 </div>
               </div>
 
